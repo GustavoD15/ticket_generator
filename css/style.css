@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+*{
+   margin: 0;
+   scroll-behavior: smooth;
+}
+
+:root{
+   --inconsolata: "Inconsolata", serif;
+   --neutral0: hsl(0, 0%, 100%);
+   --neutral300: hsl(252, 6%, 83%);
+   --neutral500: hsl(245, 15%, 58%);
+   --neutral700: hsl(245, 19%, 35%, 50%);
+   --neutral900: hsl(248, 70%, 10%);
+
+   --orange500: hsl(7, 88%, 67%);
+   --orange700: hsl(7, 71%, 60%);
+
+   --gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+.container-desktop{
+   max-width: 700px;
+   margin: auto;
+   padding: 0 15px;
+}
+
+.container-mobile{
+   max-width: 375px;
+   margin: auto;
+   padding: 0 15px;
+}
+
+label{
+   font-size: 20px;
+}
+
+a{
+   text-decoration: none;
+}
+
+#logo{
+   padding: 30px;
+}
+
+h1{
+   font-family: var(--inconsolata);
+   color: var(--neutral0);
+   font-size: 45px;
+   padding-top: 30px;
+}
+
+h2{
+   font-family: var(--inconsolata);
+   color: var(--neutral0);
+   font-size: 30px;
+}
+
+h3{
+   font-family: var(--inconsolata);
+   color: var(--neutral0);
+   font-size: 24px;
+   justify-self: baseline;
+}
+
+p{
+   font-family: var(--inconsolata);
+   font-size: 20px;
+   color: var(--neutral300);
+   padding: 20px;
+}
+
+
+
+main{
+   background-image: 
+   url("../assets/images/background-desktop.png"),
+   url("../assets/images/pattern-lines.svg"),
+   url("../assets/images/pattern-squiggly-line-bottom-desktop.svg"),
+   url("../assets/images/pattern-squiggly-line-top.svg"),
+   url("../assets/images/pattern-circle.svg"),
+   url("../assets/images/pattern-circle.svg");
+   background-position-x: center, center, left, right, 3%, 77%;
+   background-position-y: center, top, bottom, 10%, -12%, 55%;
+   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+   background-size: cover, contain, 60%, 30%, 15%, 15%;
+   background-blend-mode: overlay;
+   max-width: 1440px;
+   margin: auto;
+   text-align: center;
+}
+
+
+#div-form{   
+   form{
+      display: grid;
+      grid-template-columns: 1fr;
+      font-family: var(--inconsolata);
+      color: var(--neutral300);
+      text-align: left;
+      max-width: 500px;
+      margin: 60px auto;
+      gap: 20px;
+   }
+
+   form div{
+      display: grid;
+      grid-template-columns: 1fr;
+   }
+
+   .info-image{
+      color: var(--neutral500);
+      font-size: 14px;
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      padding: 0;
+   }
+
+   input{
+      padding: 15px;
+      background-color: var(--neutral700);
+      background-blend-mode: difference;
+      border: 1px solid var(--neutral500);
+      font-family: var(--inconsolata);
+      border-radius: 10px;
+      color: var(--neutral300);
+      font-size: 18px;
+      transition: all 0.3s ease;
+   }
+
+   input:focus{
+      border: 1px solid var(--neutral500);
+      outline: 1px solid var(--neutral500);
+      outline-offset: 3px;
+   }
+
+   input:hover{
+      background-color: var(--neutral500);
+   }
+
+   input[type=submit]{
+      background-color: var(--orange700);
+      font-weight: 700;
+      font-size: 17px;
+      border: none;
+      transition: all 0.3s ease;
+      color: black;
+   }
+
+   input[type=submit]:hover{
+      background-color: var(--orange500);
+   }
+
+   
+   label{
+      padding-top: 15px;
+   }
+   
+   .upload-area{
+      justify-items: center;
+      gap: 10px;
+      padding: 25px;
+      background-color: hsl(245, 19%, 35%, 30%);;
+      border: 1px dashed var(--neutral500);
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+
+      label{
+         padding: 25px;
+         display: contents;
+
+      }
+   }
+
+   .hoverable:hover{
+      cursor: pointer;
+      background-color: var(--neutral500);
+   }
+   .upload-area.dragover{
+      background-color: var(--neutral500);
+      outline: 1px solid var(--neutral500);
+      outline-offset: 3px;
+   }
+   #uploaded-image-div{
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+
+      #remove-image,
+      #change-image{
+         font-size: 16px;
+         font-family: var(--inconsolata);
+         background-color: var(--neutral700);
+         border-radius: 5px;
+         border: none;
+         color: var(--neutral0);
+         padding: 0 5px;
+         display: block;
+      }
+      #remove-image:hover,
+      #change-image:hover{
+         text-decoration: underline;
+         cursor: pointer;
+      }
+   }
+
+   #upload-image{
+      background-color: var(--neutral700);
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 25px;
+   }
+   #uploaded-image{
+      height: 45px;
+      max-width: 45px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--neutral300);
+   }
+   .error-input{
+      border: 1px solid var(--orange700);
+   }
+   .error-text{
+      color: var(--orange700);
+      font-size: 14px;
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      padding: 0;
+   }
+}
+
+#div-ticket{
+
+   #ticket-email{
+      max-width: 400px;
+      margin: auto;
+      margin-bottom: 50px;
+   }
+
+   #ticket{
+      background: url("../assets/images/pattern-ticket.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      max-width: 500px;
+      margin: auto;
+      margin-bottom: 100px;
+
+      display: flex;
+      justify-content: space-between;
+      
+      #ticket-top{
+         display: flex;
+         align-items: start;
+         text-align: start;
+         padding: 20px;
+
+         img{
+            padding-top: 5px;
+            padding-right: 20px;
+            max-width: 30px;
+         }
+         p{
+            padding: 0;
+            font-size: 12px;
+            padding-top: 10px;
+         }
+      }
+
+      #ticket-bot{
+         display: flex;
+         align-items: center;
+         padding-top: 40px;
+
+         #profile-picture{
+            max-width: 70px;
+            padding: 15px;
+            border-radius: 30px;
+         }
+
+         p{
+            padding: 0;
+            font-size: 12px;
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+         }
+         
+      }
+      #tag{
+         align-self: center;
+         rotate: 90deg;
+         color: var(--neutral500);
+         padding: 0;
+         padding-top: 30px;
+      }
+   }
+   
+}
+
+.user-info{
+   background: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+   -webkit-background-clip: text;
+   color: transparent;
+}
+
+.attribution{
+      font-size: 11px; 
+      text-align: center;
+      color: var(--neutral300);
+      padding-bottom: 50px;
+   }
+
+   .attribution a{
+      color: hsl(228, 45%, 44%); 
+   }
+
+@media screen and (max-width: 1024px) {
+   main{
+      background-image: 
+      url("../assets/images/background-tablet.png"),
+      url("../assets/images/pattern-lines.svg"),
+      url("../assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"),
+      url("../assets/images/pattern-squiggly-line-top.svg"),
+      url("../assets/images/pattern-circle.svg"),
+      url("../assets/images/pattern-circle.svg");
+   }  
+}
+
+@media screen and (max-width: 767px) {
+   main{
+      background-image: 
+      url("../assets/images/background-mobile.png"),
+      url("../assets/images/pattern-lines.svg"),
+      url("../assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"),
+      url("../assets/images/pattern-squiggly-line-top.svg"),
+      url("../assets/images/pattern-circle.svg"),
+      url("../assets/images/pattern-circle.svg");
+   }
+   .upload-area label{
+      font-size: 12px;
+      padding: 15px;
+   }
+   #ticket{
+      max-width: 300px !important;
+      padding: 15px !important;
+   }
+   #ticket h2{
+      font-size: 20px;
+   }
+   #ticket-top img{
+      max-width: 20px !important;
+      padding-right: 5px !important;
+      padding-top: 2px !important;
+   }
+   #ticket-top p{
+      padding-top: 5px !important;
+   }
+   #ticket-top,
+   #ticket-bot{
+      padding: 5px !important;
+   }
+   #ticket-top{
+      padding-bottom: 27px !important;
+   }
+   #ticket-bot h3{
+      font-size: 17px !important;
+   }
+   #ticket-bot p{
+      padding-top: 3px !important;
+   }
+   #tag{
+      padding: 0 !important;
+      padding-bottom: 25px !important;
+   }
+   #profile-picture{
+      padding: 0 !important;
+      max-width: 40px !important;
+      border-radius: 5px !important;
+      padding-right: 5px !important;
+   }
+}
