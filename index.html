@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Conference ticket generator</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="./assets/images/logo-full.svg" alt="Logo Coding Conf" id="logo">
+    <div class="container-desktop" id="div-form">
+
+
+  
+      <h1>Sua jornada na programação começa aqui!</h1>
+
+      <p>Garanta já o seu ingresso!.</p>
+
+      <form action="#" method="post">
+        <label for="avatar">Insira a sua foto de perfil</label>
+        <div>
+          <div class="upload-area hoverable" id="upload-area">
+            <input type="file" name="avatar" id="avatar" hidden accept="image/png, image/jpeg">
+            <label for="avatar" id="label-upload">
+              <img src="./assets/images/icon-upload.svg" alt="Icone d'upload" id="upload-image">
+              Arraste ou clique para inserir
+            </label>
+          </div>
+        </div>
+        <p id="info-image" class="info-image"><img src="./assets/images/icon-info.svg" alt="Icone d'information"> Upload your photo (JPG or PNG, max size: 500KB).</p>
+        
+
+        <label for="name">Nome completo</label>
+        <input type="text" name="name" id="name" placeholder="Insira seu nome completo">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="exemplo@email.com">
+        
+
+        <label for="github-username">Usuário GitHub</label>
+        <input type="text" name="github-username" id="github-username" placeholder="@Usuário github">
+        
+        <input type="submit" value="Generate My Ticket">
+      </form>
+      
+      
+
+      
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com">Gustavo Diniz</a>.
+      </div>
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
