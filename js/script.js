@@ -31,11 +31,12 @@ function uploadImage(event){
  
           imageUrl = URL.createObjectURL(file);
           const avatar = document.querySelector('#label-upload')
-          avatar.innerHTML = `
+          avatar.innerHTML = 
+          `
              <img src="${imageUrl}" alt="Icone info" id="uploaded-image">
              <div id="uploaded-image-div">
-                <button id="remove-image">Remove image</button>
-                <label for="avatar" id="change-image">Change image</label>
+                <button id="remove-image">Remover imagem</button>
+                <label for="avatar" id="change-image">Trocar imagem</label>
              </div>
           `;
           uploadArea.classList.remove('hoverable')
@@ -61,6 +62,8 @@ function uploadImage(event){
       
     }
  }
+
+
  const uploadArea = document.querySelector('#upload-area')
  const fileInput = document.querySelector('#avatar')
  let imageUrl = "";
@@ -99,6 +102,8 @@ function uploadImage(event){
     e.preventDefault()
  })
  
+
+
  const inputName = document.querySelector('#name')
  const errorName = document.createElement('p')
  errorName.classList.add('error-text')
@@ -114,11 +119,7 @@ function uploadImage(event){
  errorGithub.classList.add('error-text')
  inputGithub.after(errorGithub)
  
- inputGithub.addEventListener('focus', (e) => {
-    if(inputGithub.value == ""){
-       inputGithub.value = "@"
-    }
- })
+ 
  
  form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -158,8 +159,9 @@ function uploadImage(event){
  
     if(fullName != "" && email != "" && githubUsername != "" && githubUsername.startsWith("@") && imageUrl != ""){
         const main = document.querySelector('main')
-        const numeroTicket = Math.floor(Math.random()*99998+1)
-        main.innerHTML = `
+        const numeroTicket = Math.floor(Math.random()*1000000)
+        main.innerHTML = 
+        `
         <img src="./assets/images/logo-full.svg" alt="Logo Coding Conf" id="logo">
         <div id="div-ticket" class="container-desktop">
            <h1>Parabéns, <span class="user-info">${fullName}</span>! Seu ingresso está pronto!.</h1>

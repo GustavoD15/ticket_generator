@@ -19,6 +19,11 @@
    --gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
 }
 
+html,
+body {
+   overflow-x: hidden;
+}
+
 .container-desktop{
    max-width: 700px;
    margin: auto;
@@ -74,19 +79,21 @@ p{
 
 main{
    background-image: 
-   url("../assets/images/background-desktop.png"),
-   url("../assets/images/pattern-lines.svg"),
-   url("../assets/images/pattern-squiggly-line-bottom-desktop.svg"),
-   url("../assets/images/pattern-squiggly-line-top.svg"),
-   url("../assets/images/pattern-circle.svg"),
-   url("../assets/images/pattern-circle.svg");
+      url("../assets/images/background-desktop.png"),
+      url("../assets/images/pattern-lines.svg"),
+      url("../assets/images/pattern-squiggly-line-bottom-desktop.svg"),
+      url("../assets/images/pattern-squiggly-line-top.svg"),
+      url("../assets/images/pattern-circle.svg"),
+      url("../assets/images/pattern-circle.svg");
    background-position-x: center, center, left, right, 3%, 77%;
    background-position-y: center, top, bottom, 10%, -12%, 55%;
    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
    background-size: cover, contain, 60%, 30%, 15%, 15%;
    background-blend-mode: overlay;
-   max-width: 1440px;
-   margin: auto;
+   
+   width: 100vw;
+   min-height: 100vh;
+   margin: 0;
    text-align: center;
 }
 
@@ -99,8 +106,8 @@ main{
       color: var(--neutral300);
       text-align: left;
       max-width: 500px;
-      margin: 60px auto;
-      gap: 20px;
+      margin: 15px auto; 
+      gap: 10px;          
    }
 
    form div{
